@@ -2,15 +2,16 @@
 h1,
 .h1
 {
-  font: 400 3.75rem/0.9 'PT Serif', serif; /* 60px/54px */
+  font: 400 3.75rem/.9 'PT Serif', serif; /* 60px/54px */
 
   margin: 40px 0;
 
   color: #fff;
-  span {
+  span
+  {
     font: 2.25rem/1.5 'PT Serif', serif; /* 36px/54px */
-    }
   }
+}
 h2,
 .h2
 {
@@ -19,7 +20,7 @@ h2,
   margin: 40px 0;
 
   color: #000;
-  }
+}
 h3,
 .h3
 {
@@ -28,7 +29,7 @@ h3,
   margin: 40px 0;
 
   color: #000;
-  }
+}
 h4,
 .h4
 {
@@ -37,7 +38,7 @@ h4,
   margin: 40px 0;
 
   color: #000;
-  }
+}
 h5,
 .h5
 {
@@ -46,11 +47,13 @@ h5,
   margin: 40px 0;
 
   color: #000;
-  }
-.title-center {
+}
+.title-center
+{
   text-align: center;
   text-transform: uppercase;
-  &.white {
+  &.white
+  {
     color: #fff;
   }
 }
@@ -58,27 +61,37 @@ p,
 ul
 {
   font: 400 1.125rem/1.333333333333333 'PT Sans', sans-serif; /* 18px/24px */
-  }
+}
 blockquote
 {
   margin: 40px 0;
-  padding: 10px 0 10px 130px;
-  p {
+  padding: 20px 100px 60px 200px;
+
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  background-color: #fff;
+  p
+  {
     font: 400 1.25rem/1.5 'PT Serif', serif; /* 20px/30px */
     &:last-child
     {
       margin: 0;
-      }
     }
   }
-  footer {
-    font: 700 1.125rem/1.333333333333333 'PT Sans', sans-serif; /* 18px/24px */
-    cite {
-      display: block;
-      font: 400 1rem/1.25 'PT Sans', sans-serif; /* 16px/20px */
-      color: #626262;
-    }
+}
+footer
+{
+  font: 700 1.125rem/1.333333333333333 'PT Sans', sans-serif; /* 18px/24px */
+  cite
+  {
+    font: 400 1rem/1.25 'PT Sans', sans-serif; /* 16px/20px */
+
+    display: block;
+
+    color: #626262;
   }
+}
 ul
 {
   margin: 40px 0;
@@ -90,23 +103,23 @@ ul
       margin: 0 15px 0 0;
 
       content: '●';
-      }
+    }
     &:last-child
     {
       padding: 0;
-      }
     }
   }
+}
 b,
 strong
 {
   font-weight: 700;
-  }
+}
 i,
 em
 {
   font-style: italic;
-  }
+}
 p,
 .paragraph
 {
@@ -114,13 +127,15 @@ p,
   &.date
   {
     font: 400 1rem/1.25 'PT Sans', sans-serif; /* 16px/20px */
-    color: #626262;
+
     margin: 0;
-    }
+
+    color: #626262;
+  }
   &:last-child
   {
     margin: 0;
-    }
+  }
   a
   {
     display: inline-block;
@@ -131,11 +146,23 @@ p,
     &:hover
     {
       text-decoration: underline;
-      }
     }
   }
-input {
+}
+input,
+textarea
+{
   font: 400 1.125rem/1.388888888888889 'PT Sans', sans-serif; /* 18px/25px */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 5px 0 5px 20px;
+  color: #333;
+  margin: 0 auto 20px;
+  display: block;
+  width: 100%;
+}
+textarea {
+  resize: none;
 }
 img
 {
@@ -143,5 +170,5 @@ img
   {
     width: 100%;
     margin: 20px auto;
-    }
   }
+}

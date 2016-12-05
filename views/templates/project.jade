@@ -33,7 +33,7 @@ section#events
   .container
     .row
       .col-xs-8.col-xs-offset-2
-        h3.title-center Мероприятия
+        h3.title-center.white Мероприятия
         p Определяет приоритетные направления языковой политики Республики Саха (Якутия) в сфере сохранения, изучения, развития и использования государственных и официальных языков Республики Саха (Якутия)
 section#news
   .container
@@ -43,19 +43,62 @@ section#news
         p В целях дальнейшего устойчивого и гармоничного развития этнокультурного и языкового многообразия, поддержки государственных и официальных языков в местах проживания коренных малочисленных народов Севера Республики Саха (Якутия).
     .row
       .col-xs-12
-        .post-container
-          .post-item
+        .post-list
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Прошел первый этап конкурса на соискание грантов Главы
+              p.date 02 декабря 2016
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Координационный совет при Главе РС(Я): в Стратегии социально-экономического развития Якутии до 2030 года
+              p.date 02 декабря 2016
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Вниманию предпринимателей!
+              p.date 02 декабря 2016
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Прошел первый этап конкурса на соискание грантов Главы
+              p.date 02 декабря 2016
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Координационный совет при Главе РС(Я): в Стратегии социально-экономического развития Якутии до 2030 года
+              p.date 02 декабря 2016
+          figure.post-item
+            img.img-responsive(src="images/cover/hero.jpg", alt="")
+            figcaption
+              h5 Вниманию предпринимателей!
+              p.date 02 декабря 2016
+    .btn-center
+      a.btn(href="") Все новости
 section#competition
 section#partners
+  .row
+    .col-xs-12.col-md-3
+      img.img-responsive(src="", alt="")
+    .col-xs-12.col-md-3
+      img.img-responsive(src="", alt="")
+    .col-xs-12.col-md-3
+      img.img-responsive(src="", alt="")
+    .col-xs-12.col-md-3
+      img.img-responsive(src="", alt="")
 section#feedback
   .container
     .row
       .col-xs-8.col-xs-offset-2
-        h3.title-center Обращение граждан
+        h3.title-center.white Обращение граждан
         p Определяет приоритетные направления языковой политики Республики Саха (Якутия) в сфере сохранения, изучения, развития и использования государственных и официальных языков Республики Саха (Якутия)
-        form 
-          input(type="text" placeholder="Полное имя")
-          input(type="tel" placeholder="Телефон")
-          input(type="email" placeholder="Эл. почта")
-          textarea(name="" placeholder="Сообщение")
+        form.row
+          .col-xs-8.col-xs-offset-2
+            h4 Связаться с нами
+            input(type="text" placeholder="Полное имя")
+            input(type="tel" placeholder="Телефон")
+            input(type="email" placeholder="Эл. почта")
+            textarea(name="" rows="5" placeholder="Сообщение")
+            button.btn(type="submit") Отправить
 footer
