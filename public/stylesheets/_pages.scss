@@ -23,13 +23,15 @@ section
   .hero-caption
   {
     display: table-cell;
-    color: #fff;
+
     width: 100%;
     height: 100%;
     padding: 200px 0;
 
     text-align: center;
     vertical-align: middle;
+
+    color: #fff;
   }
 }
 #quote
@@ -45,9 +47,20 @@ section
 }
 #projects
 {
-  .project 
+  .project
   {
-    border-radius: 10px;
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 330px;
+    margin: 0 0 30px;
+
+    color: #fff;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
     background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
     background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
     background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
@@ -56,29 +69,27 @@ section
     -moz-background-size: cover;
       -o-background-size: cover;
          background-size: cover;
-    color: #fff;
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 330px;
-    margin: 0 0 30px;
-    &:last-child {
+    &:last-child
+    {
       margin: 0 0 60px;
     }
-    article 
+    article
     {
       position: absolute;
+      right: 15%;
       bottom: 0;
       left: 5%;
-      right: 15%;
-      h2 {
+      h2
+      {
         margin: 0 0 20px;
       }
     }
-  }  
+  }
 }
 #events
 {
+  text-align: center;
+
   color: #fff;
   background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
   background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
@@ -88,7 +99,6 @@ section
   -moz-background-size: cover;
     -o-background-size: cover;
        background-size: cover;
-  text-align: center;
 }
 #news
 {
@@ -118,69 +128,139 @@ section
          -moz-box-orient: vertical;
          -moz-box-direction: normal;
           -ms-flex-direction: column;
-      &-cover 
+      &-cover
       {
-        display: block;
         position: relative;
+
+        display: block;
+        overflow: hidden;
+
         width: 100%;
         height: 0;
         padding-bottom: 56.25%;
-        overflow: hidden;
         &:hover
         {
           .post-bg
           {
-            transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+               -moz-transform: scale(1.4);
+                -ms-transform: scale(1.4);
+                 -o-transform: scale(1.4);
+                    transform: scale(1.4);
           }
         }
         .post-bg
         {
-          background: url(../images/cover/hero.jpg) center center no-repeat;
-          background-size: cover;
           position: absolute;
           top: 0;
-          left: 0;
           right: 0;
           bottom: 0;
+          left: 0;
+
           width: 100%;
           height: 100%;
-          transition: 0.5s ease-in-out;
+
+          -webkit-transition: .5s ease-in-out;
+             -moz-transition: .5s ease-in-out;
+               -o-transition: .5s ease-in-out;
+                  transition: .5s ease-in-out;
+
+          background: url(../images/cover/hero.jpg) center center no-repeat;
+          -moz-background-size: cover;
+            -o-background-size: cover;
+               background-size: cover;
         }
       }
       h5
       {
         margin: 20px 0;
-        a {
+        a
+        {
+          text-decoration: none;
+
           color: inherit;
-          text-decoration: none
         }
+      }
+    }
+  }
+}
+#competition
+{
+  padding: 0 15px;
+
+  color: #fff;
+  .competition
+  {
+    position: relative;
+
+    float: left;
+
+    width: 50%;
+    height: 0;
+
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/competition.jpg) center center no-repeat;
+    background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
+    background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
+    background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
+    background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
+    -moz-background-size: cover;
+      -o-background-size: cover;
+         background-size: cover;
+    &:nth-of-type(1)
+    {
+      padding-bottom: 50%;
+    }
+    &:nth-of-type(2)
+    {
+      padding-bottom: 25%;
+    }
+    &:nth-of-type(3)
+    {
+      padding-bottom: 25%;
+    }
+    &-caption
+    {
+      position: absolute;
+      right: 10%;
+      bottom: 15%;
+      left: 10%;
+      h3 {
+        margin: 0 0 20px;
       }
     }
   }
 }
 #partners
 {
+  padding: 30px;
   img
   {
+    margin: 0 auto;
+
+    opacity: .8;
+
     -webkit-filter: grayscale(100%);
     -webkit-filter: grayscale(1);
-    filter: grayscale(100%);
-   
+            filter: grayscale(100%);
     -webkit-filter: url(../images/grayscale.svg#grayscale);
-   
             filter: url(../images/grayscale.svg#grayscale);
     -webkit-filter: gray;
             filter: gray;
-    opacity: .8;
-    margin: 0 auto;
-    &:hover {
-      filter: none;
+    &:hover
+    {
       opacity: 1;
+
+      -webkit-filter: none;
+              filter: none;
     }
   }
 }
 #feedback
 {
+  padding: 80px 0 300px;
+
+  text-align: center;
+
   color: #fff;
   background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
   background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
@@ -190,43 +270,55 @@ section
   -moz-background-size: cover;
     -o-background-size: cover;
        background-size: cover;
-  text-align: center;
-  padding: 80px 0 300px;
-  form {
-    background: #fff;
+  form
+  {
+    padding: 40px;
+
     color: #000;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
-    padding: 40px;
-    h4 {
+    background: #fff;
+    h4
+    {
       margin: 0 0 20px;
     }
   }
 }
-@media (max-width: 991px) {
-  #news {
-    .post-list {
-      .post-item {
+@media (max-width: 991px)
+{
+  #news
+  {
+    .post-list
+    {
+      .post-item
+      {
         width: 50%;
       }
     }
   }
-  #projects .project article p {
+  #projects .project article p
+  {
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767px)
+{
   html,
-  body {
+  body
+  {
     font-size: 14px;
   }
-  #hero .hero-caption {
+  #hero .hero-caption
+  {
     padding: 70px 0;
   }
-  #news {
-    .post-list {
-      .post-item {
+  #news
+  {
+    .post-list
+    {
+      .post-item
+      {
         width: 100%;
       }
     }

@@ -55,48 +55,60 @@ ul
 blockquote
 {
   display: table;
+
+  padding: 40px 15px;
+
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px;
   background-color: #fff;
-  padding: 40px 15px;
   .blockquote-img
   {
-    width: 25%;
     float: left;
+
+    width: 25%;
     padding: 0 15px;
-    &-container {
+    &-container
+    {
       position: relative;
+
+      overflow: hidden;
+
       height: 0;
       padding-bottom: 100%;
-      overflow: hidden;
-      background-position: center center;
-      background-repeat: no-repeat;
-      -moz-background-size: cover;
-        -o-background-size: cover;
-           background-size: cover;
+
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
               border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -moz-background-size: cover;
+        -o-background-size: cover;
+           background-size: cover;
     }
   }
   .blockquote-text
   {
-    width: 75%;
     float: left;
+
+    width: 75%;
     padding: 0 15px;
   }
   p
   {
     font: 400 1.25rem/1.5 'PT Serif', serif; /* 20px/30px */
+
     margin: 20px 0 40px;
   }
   footer
   {
     font: 700 1.125rem/1.333333333333333 'PT Sans', sans-serif; /* 18px/24px */
-    display: inline-block;
+
     position: relative;
-    img {
+
+    display: inline-block;
+    img
+    {
       position: absolute;
       top: -25px;
       right: -70%;
@@ -168,14 +180,18 @@ p,
     }
   }
 }
-input {
-  &.ng-valid {
+input
+{
+  &.ng-valid
+  {
     border-color: #38c676;
-  }  
-  &.ng-invalid {
+  }
+  &.ng-invalid
+  {
     border-color: #f13a2c;
   }
-  &.ng-pristine {
+  &.ng-pristine
+  {
     border-color: #ccc;
   }
 }
@@ -183,17 +199,21 @@ input,
 textarea
 {
   font: 400 1.125rem/1.388888888888889 'PT Sans', sans-serif; /* 18px/25px */
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 5px 20px;
+
+  color: #333;
+  border: 1px solid #ccc;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  border: 1px solid #ccc;
-  padding: 5px 20px;
-  color: #333;
-  margin: 0 auto 20px;
-  display: block;
-  width: 100%;
 }
-textarea {
+textarea
+{
   resize: none;
 }
 img
@@ -204,12 +224,16 @@ img
     margin: 20px auto;
   }
 }
-@media (max-width: 991px) {
-  blockquote {
-    .blockquote-img {
+@media (max-width: 991px)
+{
+  blockquote
+  {
+    .blockquote-img
+    {
       display: none;
     }
-    .blockquote-text {
+    .blockquote-text
+    {
       width: 100%;
     }
   }
