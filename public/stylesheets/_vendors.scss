@@ -15,8 +15,7 @@
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/gradients';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '../../node_modules/angular-ui-carousel/dist/ui-carousel.min';
-
+@import '../../node_modules/swiper/dist/css/swiper';
 .ngdialog.ngdialog-theme-default
 {
   display: table;
@@ -42,4 +41,14 @@
 .ngdialog-overlay
 {
   background: rgba(0,0,0,.7);
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev 
+{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNyA0NCc+PHBhdGggZD0nTTI3LDIyTDI3LDIyTDUsNDRsLTIuMS0yLjFMMjIuOCwyMkwyLjksMi4xTDUsMEwyNywyMkwyNywyMnonIGZpbGw9JyNmZmYnLz48L3N2Zz4=);
+}
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next
+{
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNyA0NCc+PHBhdGggZD0nTTAsMjJMMjIsMGwyLjEsMi4xTDQuMiwyMmwxOS45LDE5LjlMMjIsNDRMMCwyMkwwLDIyTDAsMjJ6JyBmaWxsPScjZmZmJy8+PC9zdmc+);
 }

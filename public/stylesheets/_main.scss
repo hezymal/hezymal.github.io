@@ -75,8 +75,8 @@ figure
     {
       float: right;
 
-      margin: 0 17px 0 0;
-      padding: 14px 0;
+      margin: 17px 51px 17px 17px;
+      padding: 0;
 
       cursor: pointer;
       vertical-align: middle;
@@ -169,6 +169,9 @@ figure
     display: inline-block;
 
     width: 100%;
+    &:last-of-type {
+      margin: 0 0 40px;
+    }
     a
     {
       position: relative;
@@ -186,7 +189,7 @@ figure
       &:after
       {
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         left: 0;
 
         width: 0;
@@ -225,22 +228,34 @@ figure
   text-transform: uppercase;
 
   color: #fff;
-  border: 1px solid transparent;
+  border: none;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  background-color: #2922ec;
   &.btn-sm
   {
     padding: 6px 33px;
   }
-  &:hover
+  &.btn-lang
   {
-    background-color: #241ed0;
+    background: transparent;
+    color: #fff;
+    font-weight: 400;
   }
-  &:active
+  &.btn-default
   {
-    background-color: #0f09a7;
+    background-color: #2922ec;
+    transition: all .08s ease-in-out;
+    &:hover
+    {
+      background-color: #241ed0;
+      box-shadow: 0 0 0 3px #241ed0;
+    }
+    &:active
+    {
+      background-color: #0f09a7;
+      box-shadow: 0 0 0 3px #0f09a7;
+    }
   }
 }
 .btn-center
@@ -301,6 +316,8 @@ figure
 {
   .footer
   {
+    height: 180px;
+    margin: -180px 0 0;
     padding: 25px;
 
     text-align: center;
@@ -323,5 +340,13 @@ figure
         left: 50%;
       }
     }
+  }
+}
+@media (max-width: 767px) 
+{
+  html,
+  body
+  {
+    font-size: 13px;
   }
 }

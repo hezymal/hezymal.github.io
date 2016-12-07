@@ -1,23 +1,23 @@
 exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
   $scope.clickToOpen = function () {
     var dialog = ngDialog.open({
-      template: 'popup'
+      template: 'menu'
     });
     dialog.closePromise.then(function (data) {
-      $scope.toggle = false;
+      this.toggle = false;
     });
   };
   $scope.closeDialog = function () {
     ngDialog.close();
   };
-  $scope.toggle = false;
+  this.toggle = false;
   $scope.changeAction = function(){
     if ($scope.toggle === true) {
-      $scope.toggle = false
+      this.toggle = false
       $scope.closeDialog()
     }
     else {
-      $scope.toggle = true
+      this.toggle = true
       $scope.clickToOpen()
     }
   };

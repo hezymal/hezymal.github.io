@@ -1,0 +1,172 @@
+section#hero
+  .hero-caption
+    .container
+      .row
+        .col-xs-12.col-lg-8.col-lg-offset-2
+          h1 {{'h_title' | translate}}
+            br
+            span {{'h_span' | translate}}
+          a.btn.btn-default(href="") {{'h_btn' | translate}}
+section#about
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        article
+          h3 {{'a_title' | translate}}
+          p {{'a_text' | translate}}
+        a.btn.btn-default.btn-sm(href="") {{'a_btn' | translate}}
+section#quote
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'flip'}")
+          ks-swiper-slide.swiper-slide
+            blockquote
+              .blockquote-img
+                .blockquote-img-container(style="background-image: url(../images/borisov.png)")
+              .blockquote-text
+                p {{'q_text' | translate}}
+                footer {{'q_author' | translate}}
+                  cite {{'q_status' | translate}}
+                  img(src="images/borisov-sign.png", alt="")
+          ks-swiper-slide.swiper-slide
+            blockquote
+              .blockquote-img
+                .blockquote-img-container(style="background-image: url(../images/cover/hero.jpg)")
+              .blockquote-text
+                p {{'p_text' | translate}}
+                footer {{'q_author' | translate}}
+                  cite {{'q_status' | translate}}
+                  img(src="images/borisov-sign.png", alt="")
+section#projects
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        article
+          h3.title-center {{'p_title' | translate}}
+          p {{'p_text' | translate}}
+    .row
+      .col-xs-12.col-lg-10.col-lg-offset-1
+        a.project(href="")
+          .project-bg
+          article
+            h2 {{'p_1_title' | translate}}
+            p {{'p_1_text' | translate}}
+        a.project(href="")
+          .project-bg
+          article
+            h2 {{'p_2_title' | translate}}
+            p {{'p_2_text' | translate}}
+    .btn-center
+      a.btn.btn-default.btn-sm(href="") {{'p_btn' | translate}}
+section#events
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        article
+          h3.title-center.white {{'e_title' | translate}}
+          p {{'e_text' | translate}}
+    .row
+      .col-xs-12
+        //- ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="true" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'fade'}")
+        //-   ks-swiper-slide.swiper-slide(ng-repeat="s in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]")
+        //-     img(ng-src="http://api.randomuser.me/portraits/men/{{s}}.jpg")
+section#news
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        article
+          h3.title-center {{'n_title' | translate}}
+          p {{'n_text' | translate}}
+    .row
+      .col-xs-12
+        .post-list
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_1_title' | translate}}
+              p.date {{'n_1_date' | translate}}
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_2_title' | translate}}
+              p.date {{'n_2_date' | translate}}
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_3_title' | translate}}
+              p.date {{'n_3_date' | translate}}
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_4_title' | translate}}
+              p.date {{'n_4_date' | translate}}
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_5_title' | translate}}
+              p.date {{'n_5_date' | translate}}
+          figure.post-item
+            a(href="").post-item-cover
+              .post-bg
+            figcaption
+              h5
+                a(href="") {{'n_6_title' | translate}}
+              p.date {{'n_6_date' | translate}}
+    .btn-center
+      a.btn.btn-default.btn-sm(href="") {{'n_btn' | translate}}
+section#competition
+  .row
+    .competition
+      .competition-caption
+        h3 {{'c_1_title' | translate}}
+        p {{'c_1_text' | translate}}
+    .competition
+      .competition-caption
+        h3 {{'c_2_title' | translate}}
+        p {{'c_2_text' | translate}}
+    .competition
+      .competition-caption
+        h3 {{'c_3_title' | translate}}
+        p {{'c_3_text' | translate}}
+section#partners
+  .container
+    .row
+      .col-xs-6.col-md-3
+        a(href="")
+          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+      .col-xs-6.col-md-3
+        a(href="")
+          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+      .col-xs-6.col-md-3
+        a(href="")
+          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+      .col-xs-6.col-md-3
+        a(href="")
+          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+section#feedback
+  .container
+    .row
+      .col-xs-12.col-lg-8.col-lg-offset-2
+        article
+          h3.title-center.white {{'f_title' | translate}}
+          p {{'f_text' | translate}}
+        form
+          .row
+            .col-xs-12.col-sm-8.col-sm-offset-2
+              h4 {{'f_form' | translate}}
+              input(type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required")
+              input(type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required")
+              input(type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required")
+              textarea(rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required")
+              button.btn.btn-default.btn-sm(type="submit") {{'f_form_btn' | translate}}

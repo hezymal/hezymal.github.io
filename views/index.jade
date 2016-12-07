@@ -4,20 +4,22 @@ block content
   include ./includes/header.jade
   .wrapper(ui-view)
   include ./includes/footer.jade
-  script(type="text/ng-template" id="popup")
-    .menu
+  script(type="text/ng-template" id="menu")
+    .menu(ng-controller="menuCtrl")
       .container
         .row
           .col-xs-12
             .menu-link
-              a(ui-sref="project" ui-sref-active="active" ng-click="closeThisDialog()") О совете
+              a(ui-sref="project" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_1' | translate}}
             .menu-link
-              a(ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()") Пресс-центр
+              a(ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_2' | translate}}
             .menu-link
-              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") Конкурсы
+              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_3' | translate}}
             .menu-link
-              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") Проекты
+              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_4' | translate}}
             .menu-link
-              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") Новости
+              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_5' | translate}}
             .menu-link
-              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") Мероприятия
+              a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_6' | translate}}
+            button.btn.btn-lang(ng-click="changeLanguage('en_US');closeThisDialog()") English
+            button.btn.btn-lang(ng-click="changeLanguage('ru_RU');closeThisDialog()") Русский

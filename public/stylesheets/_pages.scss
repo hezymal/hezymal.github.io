@@ -198,25 +198,28 @@ section
     width: 50%;
     height: 0;
 
-    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/competition.jpg) center center no-repeat;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
-    background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
-    background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
-    background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) center center no-repeat;
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/competition.jpg) top center no-repeat;
+    background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
+    background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
+    background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
+    background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
     -moz-background-size: cover;
       -o-background-size: cover;
          background-size: cover;
     &:nth-of-type(1)
     {
-      padding-bottom: 50%;
+      // padding-bottom: 50%;
+      height: 720px;
     }
     &:nth-of-type(2)
     {
-      padding-bottom: 25%;
+      // padding-bottom: 25%;
+      height: 360px;
     }
     &:nth-of-type(3)
     {
-      padding-bottom: 25%;
+      // padding-bottom: 25%;
+      height: 360px;
     }
     &-caption
     {
@@ -304,14 +307,15 @@ section
 }
 @media (max-width: 767px)
 {
-  html,
-  body
-  {
-    font-size: 14px;
-  }
   #hero .hero-caption
   {
     padding: 70px 0;
+  }
+  #competition {
+    .competition
+    {
+      width: 100%;
+    }
   }
   #news
   {

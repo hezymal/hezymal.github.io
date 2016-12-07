@@ -57,7 +57,7 @@ blockquote
   display: table;
 
   padding: 40px 15px;
-
+  height: 400px;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px;
@@ -110,7 +110,7 @@ blockquote
     img
     {
       position: absolute;
-      top: -25px;
+      top: -26px;
       right: -70%;
     }
     cite
@@ -236,5 +236,12 @@ img
     {
       width: 100%;
     }
+  }
+}
+@media (max-width: 767px)
+{
+  blockquote
+  {
+    display: none;
   }
 }

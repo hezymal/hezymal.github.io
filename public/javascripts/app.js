@@ -1,10 +1,11 @@
 'use strict';
-
+var Swiper  = require('swiper');
 var angular = require('angular');
               require('angular-resource');
+              require('angular-translate');
               require('angular-sanitize');
+              require('angular-swiper');
               require('angular-ui-router');
-              require('angular-ui-carousel');
               require('ng-dialog');
               
               require('./controllers/_module');
@@ -16,25 +17,26 @@ angular
     'ngResource',
     'ngSanitize',
     'ui.router',
-    'ui.carousel',
+    'pascalprecht.translate',
+    'ksSwiper',
 
     'testControllers',
     'testServices',
     'testDirectives'
   ])
-  .run(['$rootScope', '$anchorScroll', '$state', 'Carousel', function($rootScope, $anchorScroll, $state, Carousel){
+  .run(['$rootScope', '$anchorScroll', '$state', function($rootScope, $anchorScroll, $state){
     $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
       $anchorScroll();
     });
     $rootScope.$state = $state;
-    Carousel.setOptions({});
   }])
 
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
     $stateProvider.
       state('project', {
         url: '/',
-        templateUrl: 'templates/project'
+        templateUrl: 'templates/home'
       }).
       state('processes', {
         url: '/process/',
@@ -54,4 +56,11 @@ angular
       });
       $urlRouterProvider.otherwise('/');
       $locationProvider.html5Mode(true);
+  }])
+  .config(['$translateProvider', function($translateProvider) {
+    $translateProvider
+      .translations('en_US', require('../json/locale/locale-en_US.json'))
+      .translations('ru_RU', require('../json/locale/locale-ru_RU.json'))
+      .preferredLanguage('ru_RU')
+      .useSanitizeValueStrategy('escapeParameters')
   }])

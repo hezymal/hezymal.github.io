@@ -1,7 +1,4 @@
 .header(ng-controller="headerCtrl" ng-class="{'bg': $state.includes('team')}")
-  .container
-    .row
-      .col-xs-12
-        .navbar
-          .navbar-bento(ng-click="changeAction()" ng-class="{'active': toggle}")
-            span
+  .navbar
+    .navbar-bento(ng-click="changeAction()" ng-class="{'active': toggle}")
+      span
