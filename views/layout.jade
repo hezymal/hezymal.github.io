@@ -6,9 +6,24 @@ html(ng-app="test" lang="ru_RU" ng-cloak)
     meta(name="viewport"    content="width=device-width, initial-scale=1")
     meta(name="theme-color" content="#ffffff")
     title Языковая политика Республики Саха (Якутия)
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/please-wait/0.0.5/please-wait.min.css')
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/please-wait/0.0.5/please-wait.min.js")
+    style.
+      .pg-loading-logo {
+        width: 200px;
+      }
     link(rel='stylesheet' href='stylesheets/style.css')
     link(rel="icon"       sizes="192x192" href="favicon.png")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif&amp;subset=cyrillic")
   body
     block content
-    //- script(type="text/javascript" src="script.js")
+    script(type="text/javascript" src="script.js")
     script(type="text/javascript" src="app.js")
+    script.
+      var loading_screen = pleaseWait({
+        logo: "images/alfapage.svg",
+        backgroundColor: '#000000'
+      });
+      window.addEventListener('load', function() {
+        loading_screen.finish();
+      });

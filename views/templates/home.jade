@@ -1,4 +1,4 @@
-section#hero
+section#hero(back-grad="../images/cover/hero.jpg")
   .hero-caption
     .container
       .row
@@ -15,7 +15,7 @@ section#about
           h3 {{'a_title' | translate}}
           p {{'a_text' | translate}}
         a.btn.btn-default.btn-sm(href="") {{'a_btn' | translate}}
-section#quote
+section#quote(back-grad="../images/cover/hero.jpg")
   .container
     .row
       .col-xs-12.col-lg-8.col-lg-offset-2
@@ -28,7 +28,7 @@ section#quote
                 p {{'q_text' | translate}}
                 footer {{'q_author' | translate}}
                   cite {{'q_status' | translate}}
-                  img(src="images/borisov-sign.png", alt="")
+                  img(ng-src="images/borisov-sign.png", alt="")
           ks-swiper-slide.swiper-slide
             blockquote
               .blockquote-img
@@ -37,7 +37,7 @@ section#quote
                 p {{'p_text' | translate}}
                 footer {{'q_author' | translate}}
                   cite {{'q_status' | translate}}
-                  img(src="images/borisov-sign.png", alt="")
+                  img(ng-src="images/borisov-sign.png", alt="")
 section#projects
   .container
     .row
@@ -47,19 +47,19 @@ section#projects
           p {{'p_text' | translate}}
     .row
       .col-xs-12.col-lg-10.col-lg-offset-1
-        a.project(href="")
+        a.project(href="" back-grad="../images/cover/hero.jpg")
           .project-bg
           article
             h2 {{'p_1_title' | translate}}
             p {{'p_1_text' | translate}}
-        a.project(href="")
+        a.project(href="" back-grad="../images/cover/hero.jpg")
           .project-bg
           article
             h2 {{'p_2_title' | translate}}
             p {{'p_2_text' | translate}}
     .btn-center
       a.btn.btn-default.btn-sm(href="") {{'p_btn' | translate}}
-section#events
+section#events(back-grad="../images/cover/hero.jpg")
   .container
     .row
       .col-xs-12.col-lg-8.col-lg-offset-2
@@ -67,10 +67,27 @@ section#events
           h3.title-center.white {{'e_title' | translate}}
           p {{'e_text' | translate}}
     .row
-      .col-xs-12
-        //- ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="true" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'fade'}")
-        //-   ks-swiper-slide.swiper-slide(ng-repeat="s in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]")
-        //-     img(ng-src="http://api.randomuser.me/portraits/men/{{s}}.jpg")
+      .col-xs-12.col-lg-10.col-lg-offset-1
+        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" override-parameters="{'effect':'flip'}")
+          ks-swiper-slide.swiper-slide
+            fugure.card
+              .card-bg(back-img="../images/competition.jpg")
+              figcaption.card-caption
+                p {{'e_1_date' | translate}}
+                h4 {{'e_1_title' | translate}}
+                p {{'e_1_text' | translate}}
+          ks-swiper-slide.swiper-slide
+            fugure.card
+              .card-bg(back-img="../images/competition.jpg")
+              figcaption.card-caption
+                p {{'e_2_date' | translate}}
+                h4 {{'e_2_title' | translate}}
+                p {{'e_2_text' | translate}}
+          ks-swiper-slide.swiper-slide
+            .add-event
+              a.btn.btn-default(href="") {{'h_btn' | translate}}
+              p {{'e_add_text' | translate}}
+              a.btn.btn-default.btn-sm(href="") {{'e_btn' | translate}}
 section#news
   .container
     .row
@@ -83,42 +100,42 @@ section#news
         .post-list
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_1_title' | translate}}
               p.date {{'n_1_date' | translate}}
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_2_title' | translate}}
               p.date {{'n_2_date' | translate}}
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_3_title' | translate}}
               p.date {{'n_3_date' | translate}}
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_4_title' | translate}}
               p.date {{'n_4_date' | translate}}
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_5_title' | translate}}
               p.date {{'n_5_date' | translate}}
           figure.post-item
             a(href="").post-item-cover
-              .post-bg
+              .post-bg(back-img="../images/cover/hero.jpg")
             figcaption
               h5
                 a(href="") {{'n_6_title' | translate}}
@@ -127,15 +144,15 @@ section#news
       a.btn.btn-default.btn-sm(href="") {{'n_btn' | translate}}
 section#competition
   .row
-    .competition
+    .competition(back-grad="../images/competition.jpg")
       .competition-caption
         h3 {{'c_1_title' | translate}}
         p {{'c_1_text' | translate}}
-    .competition
+    .competition(back-grad="../images/competition.jpg")
       .competition-caption
         h3 {{'c_2_title' | translate}}
         p {{'c_2_text' | translate}}
-    .competition
+    .competition(back-grad="../images/competition.jpg")
       .competition-caption
         h3 {{'c_3_title' | translate}}
         p {{'c_3_text' | translate}}
@@ -144,17 +161,17 @@ section#partners
     .row
       .col-xs-6.col-md-3
         a(href="")
-          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+          img.img-responsive(ng-src="images/partners/aiart.png", alt="aiart")
       .col-xs-6.col-md-3
         a(href="")
-          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+          img.img-responsive(ng-src="images/partners/aiart.png", alt="aiart")
       .col-xs-6.col-md-3
         a(href="")
-          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
+          img.img-responsive(ng-src="images/partners/aiart.png", alt="aiart")
       .col-xs-6.col-md-3
         a(href="")
-          img.img-responsive(src="images/partners/aiart.png", alt="aiart")
-section#feedback
+          img.img-responsive(ng-src="images/partners/aiart.png", alt="aiart")
+section#feedback(back-grad="../images/cover/hero.jpg")
   .container
     .row
       .col-xs-12.col-lg-8.col-lg-offset-2

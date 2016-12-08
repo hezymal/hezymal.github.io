@@ -154,11 +154,6 @@ figure
     }
   }
 }
-.disable-hover,
-.disable-hover *
-{
-  pointer-events: none !important;
-}
 .menu
 {
   text-align: center;
@@ -245,7 +240,7 @@ figure
   &.btn-default
   {
     background-color: #2922ec;
-    transition: all .08s ease-in-out;
+    transition: background-color .08s ease-in-out, box-shadow .08s ease-in-out;
     &:hover
     {
       background-color: #241ed0;
@@ -312,6 +307,19 @@ figure
     }
   }
 }
+.disable-hover,
+.disable-hover *
+{
+  pointer-events: none !important;
+}
+.zero-hack
+{
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+       -o-transform: translateZ(0);
+          transform: translateZ(0);
+}
 @media (max-width: 575px)
 {
   .footer
@@ -347,6 +355,6 @@ figure
   html,
   body
   {
-    font-size: 13px;
+    font-size: 14px;
   }
 }

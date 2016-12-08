@@ -11,15 +11,6 @@ section
   width: 100%;
   height: 100vh;
   padding: 0;
-
-  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  -moz-background-size: cover;
-    -o-background-size: cover;
-       background-size: cover;
   .hero-caption
   {
     display: table-cell;
@@ -33,17 +24,6 @@ section
 
     color: #fff;
   }
-}
-#quote
-{
-  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  -moz-background-size: cover;
-    -o-background-size: cover;
-       background-size: cover;
 }
 #projects
 {
@@ -61,14 +41,6 @@ section
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
-    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-    background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-    background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-    background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-    -moz-background-size: cover;
-      -o-background-size: cover;
-         background-size: cover;
     &:last-child
     {
       margin: 0 0 60px;
@@ -91,14 +63,62 @@ section
   text-align: center;
 
   color: #fff;
-  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  -moz-background-size: cover;
-    -o-background-size: cover;
-       background-size: cover;
+  .add-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    p {
+      margin: 40px 0 80px;
+    }
+  }
+  .card 
+  {
+    text-align: left;
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #000;
+    position: relative;
+    height: 450px;
+    &:before,
+    &:after 
+    {
+      content: " ";
+      display: table;
+    }
+    .card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 39.67391304347826%;
+      height: 100%;
+      float: left;
+    }
+    .card-caption {
+      position: relative;
+      left: 39.67391304347826%;
+      padding: 15px 30px;
+      width: 60.32608695652174%;
+      float: left;
+      p 
+      {
+        margin: 40px 0 20px;
+        &:last-of-type 
+        {
+          height: 150px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      h4 
+      {
+        margin: 20px 0 35px;
+      }
+    }
+  }
 }
 #news
 {
@@ -128,6 +148,7 @@ section
          -moz-box-orient: vertical;
          -moz-box-direction: normal;
           -ms-flex-direction: column;
+      will-change: transform;
       &-cover
       {
         position: relative;
@@ -164,11 +185,6 @@ section
              -moz-transition: .5s ease-in-out;
                -o-transition: .5s ease-in-out;
                   transition: .5s ease-in-out;
-
-          background: url(../images/cover/hero.jpg) center center no-repeat;
-          -moz-background-size: cover;
-            -o-background-size: cover;
-               background-size: cover;
         }
       }
       h5
@@ -197,28 +213,16 @@ section
 
     width: 50%;
     height: 0;
-
-    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/competition.jpg) top center no-repeat;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
-    background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
-    background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
-    background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/competition.jpg) top center no-repeat;
-    -moz-background-size: cover;
-      -o-background-size: cover;
-         background-size: cover;
     &:nth-of-type(1)
     {
-      // padding-bottom: 50%;
       height: 720px;
     }
     &:nth-of-type(2)
     {
-      // padding-bottom: 25%;
       height: 360px;
     }
     &:nth-of-type(3)
     {
-      // padding-bottom: 25%;
       height: 360px;
     }
     &-caption
@@ -245,10 +249,9 @@ section
     -webkit-filter: grayscale(100%);
     -webkit-filter: grayscale(1);
             filter: grayscale(100%);
-    -webkit-filter: url(../images/grayscale.svg#grayscale);
-            filter: url(../images/grayscale.svg#grayscale);
     -webkit-filter: gray;
             filter: gray;
+    will-change: opacity;
     &:hover
     {
       opacity: 1;
@@ -265,14 +268,6 @@ section
   text-align: center;
 
   color: #fff;
-  background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, .4)) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background: -webkit-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:    -moz-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:      -o-linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  background:         linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../images/cover/hero.jpg) center center no-repeat;
-  -moz-background-size: cover;
-    -o-background-size: cover;
-       background-size: cover;
   form
   {
     padding: 40px;
@@ -324,6 +319,25 @@ section
       .post-item
       {
         width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 575px)
+{
+  #events {
+    .card {
+      .card-bg {
+        position: static;
+        width: 100%;
+        float: none;
+      }
+      .card-caption {
+        width: 100%;
+        float: none;
+        top: -100%;
+        left: 0;
+        color: #fff;
       }
     }
   }

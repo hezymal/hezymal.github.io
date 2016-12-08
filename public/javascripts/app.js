@@ -32,7 +32,6 @@ angular
   }])
 
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
-    $compileProvider.debugInfoEnabled(false);
     $stateProvider.
       state('project', {
         url: '/',
