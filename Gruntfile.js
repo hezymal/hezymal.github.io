@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           'public/build/templates/online.html': ['views/templates/online.jade'],
           'public/build/templates/process.html': ['views/templates/process.jade'],
           'public/build/templates/processes.html': ['views/templates/processes.jade'],
-          'public/build/templates/project.html': ['views/templates/project.jade']
+          'public/build/templates/home.html': ['views/templates/home.jade']
         }
       }
     },
@@ -83,8 +83,8 @@ module.exports = function(grunt) {
               replacement: '<script type="text/javascript" src="js/script.js"></script>'
             },
             {
-              pattern: 'templateUrl:"templates/project"',
-              replacement: 'templateUrl:"templates/project.html"'
+              pattern: 'templateUrl:"templates/home"',
+              replacement: 'templateUrl:"templates/home.html"'
             },
             {
               pattern: 'templateUrl:"templates/processes""',
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
               replacement: 'templateUrl:"templates/team.html"'
             },
             {
-              pattern: 'templateUrl:"templates/project"',
+              pattern: 'templateUrl:"templates/online"',
               replacement: 'templateUrl:"templates/online.html"'
             }
 

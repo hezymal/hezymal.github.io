@@ -1,0 +1,246 @@
+
+<section id="hero" back-grad="../images/cover/hero.jpg">
+  <div class="hero-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+          <h1>{{'h_title' | translate}}<br/><span>{{'h_span' | translate}}</span></h1><a href="" class="btn btn-default">{{'h_btn' | translate}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <article>
+          <h3>{{'a_title' | translate}}</h3>
+          <p>{{'a_text' | translate}}</p>
+        </article><a href="" class="btn btn-default btn-sm">{{'a_btn' | translate}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="quote" back-grad="../images/cover/hero.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'flip'}">
+          <ks-swiper-slide class="swiper-slide">
+            <blockquote>
+              <div class="blockquote-img">
+                <div style="background-image: url(../images/borisov.png)" class="blockquote-img-container"></div>
+              </div>
+              <div class="blockquote-text">
+                <p>{{'q_text' | translate}}</p>
+                <footer>{{'q_author' | translate}}
+                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt=""/>
+                </footer>
+              </div>
+            </blockquote>
+          </ks-swiper-slide>
+          <ks-swiper-slide class="swiper-slide">
+            <blockquote>
+              <div class="blockquote-img">
+                <div style="background-image: url(../images/cover/hero.jpg)" class="blockquote-img-container"></div>
+              </div>
+              <div class="blockquote-text">
+                <p>{{'p_text' | translate}}</p>
+                <footer>{{'q_author' | translate}}
+                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt=""/>
+                </footer>
+              </div>
+            </blockquote>
+          </ks-swiper-slide>
+        </ks-swiper-container>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <article>
+          <h3 class="title-center">{{'p_title' | translate}}</h3>
+          <p>{{'p_text' | translate}}</p>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1"><a href="" back-grad="../images/cover/hero.jpg" class="project">
+          <div class="project-bg"></div>
+          <article>
+            <h2>{{'p_1_title' | translate}}</h2>
+            <p>{{'p_1_text' | translate}}</p>
+          </article></a><a href="" back-grad="../images/cover/hero.jpg" class="project">
+          <div class="project-bg"></div>
+          <article>
+            <h2>{{'p_2_title' | translate}}</h2>
+            <p>{{'p_2_text' | translate}}</p>
+          </article></a></div>
+    </div>
+    <div class="btn-center"><a href="" class="btn btn-default btn-sm">{{'p_btn' | translate}}</a></div>
+  </div>
+</section>
+<section id="events" back-grad="../images/cover/hero.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <article>
+          <h3 class="title-center white">{{'e_title' | translate}}</h3>
+          <p>{{'e_text' | translate}}</p>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" override-parameters="{'effect':'flip'}">
+          <ks-swiper-slide class="swiper-slide">
+            <fugure class="card">
+              <div back-img="../images/competition.jpg" class="card-bg"></div>
+              <figcaption class="card-caption">
+                <p>{{'e_1_date' | translate}}</p>
+                <h4>{{'e_1_title' | translate}}</h4>
+                <p>{{'e_1_text' | translate}}</p>
+              </figcaption>
+            </fugure>
+          </ks-swiper-slide>
+          <ks-swiper-slide class="swiper-slide">
+            <fugure class="card">
+              <div back-img="../images/competition.jpg" class="card-bg"></div>
+              <figcaption class="card-caption">
+                <p>{{'e_2_date' | translate}}</p>
+                <h4>{{'e_2_title' | translate}}</h4>
+                <p>{{'e_2_text' | translate}}</p>
+              </figcaption>
+            </fugure>
+          </ks-swiper-slide>
+          <ks-swiper-slide class="swiper-slide">
+            <div class="add-event"><a href="" class="btn btn-default">{{'h_btn' | translate}}</a>
+              <p>{{'e_add_text' | translate}}</p><a href="" class="btn btn-default btn-sm">{{'e_btn' | translate}}</a>
+            </div>
+          </ks-swiper-slide>
+        </ks-swiper-container>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="news">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <article>
+          <h3 class="title-center">{{'n_title' | translate}}</h3>
+          <p>{{'n_text' | translate}}</p>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="post-list">
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_1_title' | translate}}</a></h5>
+              <p class="date">{{'n_1_date' | translate}}</p>
+            </figcaption>
+          </figure>
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_2_title' | translate}}</a></h5>
+              <p class="date">{{'n_2_date' | translate}}</p>
+            </figcaption>
+          </figure>
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_3_title' | translate}}</a></h5>
+              <p class="date">{{'n_3_date' | translate}}</p>
+            </figcaption>
+          </figure>
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_4_title' | translate}}</a></h5>
+              <p class="date">{{'n_4_date' | translate}}</p>
+            </figcaption>
+          </figure>
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_5_title' | translate}}</a></h5>
+              <p class="date">{{'n_5_date' | translate}}</p>
+            </figcaption>
+          </figure>
+          <figure class="post-item"><a href="" class="post-item-cover">
+              <div back-img="../images/cover/hero.jpg" class="post-bg"></div></a>
+            <figcaption>
+              <h5><a href="">{{'n_6_title' | translate}}</a></h5>
+              <p class="date">{{'n_6_date' | translate}}</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="btn-center"><a href="" class="btn btn-default btn-sm">{{'n_btn' | translate}}</a></div>
+  </div>
+</section>
+<section id="competition">
+  <div class="row">
+    <div back-grad="../images/competition.jpg" class="competition">
+      <div class="competition-caption">
+        <h3>{{'c_1_title' | translate}}</h3>
+        <p>{{'c_1_text' | translate}}</p>
+      </div>
+    </div>
+    <div back-grad="../images/competition.jpg" class="competition">
+      <div class="competition-caption">
+        <h3>{{'c_2_title' | translate}}</h3>
+        <p>{{'c_2_text' | translate}}</p>
+      </div>
+    </div>
+    <div back-grad="../images/competition.jpg" class="competition">
+      <div class="competition-caption">
+        <h3>{{'c_3_title' | translate}}</h3>
+        <p>{{'c_3_text' | translate}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="partners">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-3"><a href=""><img ng-src="images/partners/aiart.png" alt="aiart" class="img-responsive"/></a></div>
+      <div class="col-xs-6 col-md-3"><a href=""><img ng-src="images/partners/aiart.png" alt="aiart" class="img-responsive"/></a></div>
+      <div class="col-xs-6 col-md-3"><a href=""><img ng-src="images/partners/aiart.png" alt="aiart" class="img-responsive"/></a></div>
+      <div class="col-xs-6 col-md-3"><a href=""><img ng-src="images/partners/aiart.png" alt="aiart" class="img-responsive"/></a></div>
+    </div>
+  </div>
+</section>
+<section id="feedback" back-grad="../images/cover/hero.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <article>
+          <h3 class="title-center white">{{'f_title' | translate}}</h3>
+          <p>{{'f_text' | translate}}</p>
+        </article>
+        <form>
+          <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+              <h4>{{'f_form' | translate}}</h4>
+              <input type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required"/>
+              <input type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required"/>
+              <input type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required"/>
+              <textarea rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required"></textarea>
+              <button type="submit" class="btn btn-default btn-sm">{{'f_form_btn' | translate}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
