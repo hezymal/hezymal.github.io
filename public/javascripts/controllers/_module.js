@@ -6,6 +6,7 @@ var testControllers = angular.module('testControllers', []);
 
 testControllers
   .controller('headerCtrl',     require('./header'))
+  .controller('homeCtrl',       require('./home'))
   .controller('menuCtrl',       require('./menu'))
   // .controller('carouselCtrl',   require('./carousel'))
   // .controller('processesCtrl',  require('./processes'))

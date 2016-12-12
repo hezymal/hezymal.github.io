@@ -1,4 +1,5 @@
 {
+  "header_0":       "Main",
   "header_1":       "About Council",
   "header_2":       "Pressroom",
   "header_3":       "Competitions",
@@ -48,6 +49,7 @@
   "n_6_title":      "Attention entrepreneurs!",
   "n_6_date":       "December 2, 2016",
   "n_btn":          "All news",
+  "c_btn":          "Next",
   "c_1_title":      "Competitions",
   "c_1_text":       "Determines priorities of language policy of the Republic of Sakha (Yakutia) in the field of conservation, study, development and use of the state and official languages of the Republic of Sakha (Yakutia)",
   "c_2_title":      "Contest «Yakutia is calling you!»",
@@ -61,5 +63,8 @@
   "f_form_phone":   "Phone",
   "f_form_email":   "E-mail",
   "f_form_text":    "Message",
-  "f_form_btn":     "Send"
+  "f_form_btn":     "Send",
+  "f_form_date":    "Date & time",
+  "f_form_title":   "Title",
+  "f_form_content": "Content"
 }

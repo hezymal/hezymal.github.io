@@ -33,9 +33,10 @@ angular
 
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
     $stateProvider.
-      state('project', {
+      state('home', {
         url: '/',
-        templateUrl: 'templates/home'
+        templateUrl: 'templates/home',
+        controller: 'homeCtrl'
       }).
       state('processes', {
         url: '/process/',

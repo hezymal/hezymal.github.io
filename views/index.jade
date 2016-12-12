@@ -10,7 +10,9 @@ block content
         .row
           .col-xs-12
             .menu-link
-              a(ui-sref="project" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_1' | translate}}
+              a(ui-sref="home" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_0' | translate}}
+            .menu-link
+              a(ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_1' | translate}}
             .menu-link
               a(ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_2' | translate}}
             .menu-link
@@ -23,3 +25,22 @@ block content
               a(ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()") {{'header_6' | translate}}
             button.btn.btn-lang(ng-click="changeLanguage('en_US');closeThisDialog()") English
             button.btn.btn-lang(ng-click="changeLanguage('ru_RU');closeThisDialog()") Русский
+  script(type="text/ng-template" id="event_form")
+    form
+      .container
+        .row
+          .col-lg-10.col-lg-offset-1
+            .btn-close(ng-click="closeThisDialog()")
+              span
+            fugure.card
+              .card-bg(back-grad="../images/competition.jpg")
+                h4 {{'f_form' | translate}}
+                input(type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required")
+                input(type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required")
+                input(type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required")
+                textarea(rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required")
+              figcaption.card-caption
+                input(type="text" name="date" placeholder="{{'f_form_date' | translate}}" ng-model="date" required="required")
+                input(type="tel" name="title" placeholder="{{'f_form_title' | translate}}" ng-model="title" required="required")
+                textarea(rows="8" name="content" placeholder="{{'f_form_content' | translate}}" required="required")
+                a.btn.btn-default(href="") {{'f_form_btn' | translate}}

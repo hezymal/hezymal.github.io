@@ -6,7 +6,7 @@ section#hero(back-grad="../images/cover/hero.jpg")
           h1 {{'h_title' | translate}}
             br
             span {{'h_span' | translate}}
-          a.btn.btn-default(href="") {{'h_btn' | translate}}
+          a.btn.btn-default(ng-click="eventFormOpen()") {{'h_btn' | translate}}
 section#about
   .container
     .row
@@ -19,7 +19,7 @@ section#quote(back-grad="../images/cover/hero.jpg")
   .container
     .row
       .col-xs-12.col-lg-8.col-lg-offset-2
-        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'flip'}")
+        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}")
           ks-swiper-slide.swiper-slide
             blockquote
               .blockquote-img
@@ -28,7 +28,7 @@ section#quote(back-grad="../images/cover/hero.jpg")
                 p {{'q_text' | translate}}
                 footer {{'q_author' | translate}}
                   cite {{'q_status' | translate}}
-                  img(ng-src="images/borisov-sign.png", alt="")
+                  img.blockquote-text-sign(ng-src="images/borisov-sign.png", alt="")
           ks-swiper-slide.swiper-slide
             blockquote
               .blockquote-img
@@ -37,7 +37,7 @@ section#quote(back-grad="../images/cover/hero.jpg")
                 p {{'p_text' | translate}}
                 footer {{'q_author' | translate}}
                   cite {{'q_status' | translate}}
-                  img(ng-src="images/borisov-sign.png", alt="")
+                  img.blockquote-text-sign(ng-src="images/borisov-sign.png", alt="")
 section#projects
   .container
     .row
@@ -48,12 +48,10 @@ section#projects
     .row
       .col-xs-12.col-lg-10.col-lg-offset-1
         a.project(href="" back-grad="../images/cover/hero.jpg")
-          .project-bg
           article
             h2 {{'p_1_title' | translate}}
             p {{'p_1_text' | translate}}
         a.project(href="" back-grad="../images/cover/hero.jpg")
-          .project-bg
           article
             h2 {{'p_2_title' | translate}}
             p {{'p_2_text' | translate}}
@@ -68,7 +66,7 @@ section#events(back-grad="../images/cover/hero.jpg")
           p {{'e_text' | translate}}
     .row
       .col-xs-12.col-lg-10.col-lg-offset-1
-        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" override-parameters="{'effect':'flip'}")
+        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}")
           ks-swiper-slide.swiper-slide
             fugure.card
               .card-bg(back-img="../images/competition.jpg")
@@ -148,6 +146,8 @@ section#competition
       .competition-caption
         h3 {{'c_1_title' | translate}}
         p {{'c_1_text' | translate}}
+        .btn-right
+          a.btn.btn-default.btn-sm(href="") {{'c_btn' | translate}}
     .competition(back-grad="../images/competition.jpg")
       .competition-caption
         h3 {{'c_2_title' | translate}}

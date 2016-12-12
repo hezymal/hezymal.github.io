@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-lg-8 col-lg-offset-2">
-          <h1>{{'h_title' | translate}}<br/><span>{{'h_span' | translate}}</span></h1><a href="" class="btn btn-default">{{'h_btn' | translate}}</a>
+          <h1>{{'h_title' | translate}}<br/><span>{{'h_span' | translate}}</span></h1><a ng-click="eventFormOpen()" class="btn btn-default">{{'h_btn' | translate}}</a>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-8 col-lg-offset-2">
-        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" override-parameters="{'effect':'flip'}">
+        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}">
           <ks-swiper-slide class="swiper-slide">
             <blockquote>
               <div class="blockquote-img">
@@ -35,7 +35,7 @@
               <div class="blockquote-text">
                 <p>{{'q_text' | translate}}</p>
                 <footer>{{'q_author' | translate}}
-                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt=""/>
+                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt="" class="blockquote-text-sign"/>
                 </footer>
               </div>
             </blockquote>
@@ -48,7 +48,7 @@
               <div class="blockquote-text">
                 <p>{{'p_text' | translate}}</p>
                 <footer>{{'q_author' | translate}}
-                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt=""/>
+                  <cite>{{'q_status' | translate}}</cite><img ng-src="images/borisov-sign.png" alt="" class="blockquote-text-sign"/>
                 </footer>
               </div>
             </blockquote>
@@ -70,12 +70,10 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1"><a href="" back-grad="../images/cover/hero.jpg" class="project">
-          <div class="project-bg"></div>
           <article>
             <h2>{{'p_1_title' | translate}}</h2>
             <p>{{'p_1_text' | translate}}</p>
           </article></a><a href="" back-grad="../images/cover/hero.jpg" class="project">
-          <div class="project-bg"></div>
           <article>
             <h2>{{'p_2_title' | translate}}</h2>
             <p>{{'p_2_text' | translate}}</p>
@@ -96,7 +94,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" override-parameters="{'effect':'flip'}">
+        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}">
           <ks-swiper-slide class="swiper-slide">
             <fugure class="card">
               <div back-img="../images/competition.jpg" class="card-bg"></div>
@@ -194,6 +192,7 @@
       <div class="competition-caption">
         <h3>{{'c_1_title' | translate}}</h3>
         <p>{{'c_1_text' | translate}}</p>
+        <div class="btn-right"><a href="" class="btn btn-default btn-sm">{{'c_btn' | translate}}</a></div>
       </div>
     </div>
     <div back-grad="../images/competition.jpg" class="competition">

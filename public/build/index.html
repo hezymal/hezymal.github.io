@@ -38,7 +38,8 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <div class="menu-link"><a ui-sref="project" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_1' | translate}}</a></div>
+              <div class="menu-link"><a ui-sref="home" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_0' | translate}}</a></div>
+              <div class="menu-link"><a ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_1' | translate}}</a></div>
               <div class="menu-link"><a ui-sref="processes" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_2' | translate}}</a></div>
               <div class="menu-link"><a ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_3' | translate}}</a></div>
               <div class="menu-link"><a ui-sref="online" ui-sref-active="active" ng-click="closeThisDialog()">{{'header_4' | translate}}</a></div>
@@ -50,6 +51,31 @@
           </div>
         </div>
       </div>
+    </script>
+    <script type="text/ng-template" id="event_form">
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+              <div ng-click="closeThisDialog()" class="btn-close"><span></span></div>
+              <fugure class="card">
+                <div back-grad="../images/competition.jpg" class="card-bg">
+                  <h4>{{'f_form' | translate}}</h4>
+                  <input type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required">
+                  <input type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required">
+                  <input type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required">
+                  <textarea rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required"></textarea>
+                </div>
+                <figcaption class="card-caption">
+                  <input type="text" name="date" placeholder="{{'f_form_date' | translate}}" ng-model="date" required="required">
+                  <input type="tel" name="title" placeholder="{{'f_form_title' | translate}}" ng-model="title" required="required">
+                  <textarea rows="8" name="content" placeholder="{{'f_form_content' | translate}}" required="required"></textarea><a href="" class="btn btn-default">{{'f_form_btn' | translate}}</a>
+                </figcaption>
+              </fugure>
+            </div>
+          </div>
+        </div>
+      </form>
     </script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/app.js"></script>

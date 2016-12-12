@@ -48460,9 +48460,10 @@ angular
 
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$compileProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
     $stateProvider.
-      state('project', {
+      state('home', {
         url: '/',
-        templateUrl: 'templates/home'
+        templateUrl: 'templates/home',
+        controller: 'homeCtrl'
       }).
       state('processes', {
         url: '/process/',
@@ -48490,7 +48491,7 @@ angular
       .preferredLanguage('ru_RU')
       .useSanitizeValueStrategy('escapeParameters')
   }])
-},{"../json/locale/locale-en_US.json":20,"../json/locale/locale-ru_RU.json":21,"./controllers/_module":13,"./directives/_module":16,"./services/_module":19,"angular":9,"angular-resource":2,"angular-sanitize":4,"angular-swiper":5,"angular-translate":6,"angular-ui-router":7,"ng-dialog":10,"swiper":11}],13:[function(require,module,exports){
+},{"../json/locale/locale-en_US.json":21,"../json/locale/locale-ru_RU.json":22,"./controllers/_module":13,"./directives/_module":17,"./services/_module":20,"angular":9,"angular-resource":2,"angular-sanitize":4,"angular-swiper":5,"angular-translate":6,"angular-ui-router":7,"ng-dialog":10,"swiper":11}],13:[function(require,module,exports){
 'use strict';
 
 /* Controllers */
@@ -48499,37 +48500,52 @@ var testControllers = angular.module('testControllers', []);
 
 testControllers
   .controller('headerCtrl',     require('./header'))
+  .controller('homeCtrl',       require('./home'))
   .controller('menuCtrl',       require('./menu'))
   // .controller('carouselCtrl',   require('./carousel'))
   // .controller('processesCtrl',  require('./processes'))
   // .controller('peopleCtrl',     require('./people'))
 
-},{"./header":14,"./menu":15}],14:[function(require,module,exports){
+},{"./header":14,"./home":15,"./menu":16}],14:[function(require,module,exports){
 exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
   $scope.clickToOpen = function () {
     var dialog = ngDialog.open({
       template: 'menu'
     });
     dialog.closePromise.then(function (data) {
-      this.toggle = false;
+      $scope.toggle = false;
     });
   };
   $scope.closeDialog = function () {
     ngDialog.close();
   };
-  this.toggle = false;
+  $scope.toggle = false;
   $scope.changeAction = function(){
     if ($scope.toggle === true) {
-      this.toggle = false
+      $scope.toggle = false
       $scope.closeDialog()
     }
     else {
-      this.toggle = true
+      $scope.toggle = true
       $scope.clickToOpen()
     }
   };
 }];
 },{}],15:[function(require,module,exports){
+exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
+  $scope.eventFormOpen = function () {
+    var dialog = ngDialog.open({
+      template: 'event_form'
+    });
+    dialog.closePromise.then(function (data) {
+      $scope.toggle = false;
+    });
+  };
+  $scope.closeDialog = function () {
+    ngDialog.close();
+  };
+}];
+},{}],16:[function(require,module,exports){
 exports = module.exports = ['$scope', '$translate', '$state', function ($scope, $translate, $state) {
   $scope.$state = $state;
   $scope.changeLanguage = function (key) {
@@ -48537,7 +48553,7 @@ exports = module.exports = ['$scope', '$translate', '$state', function ($scope, 
     $state.reload();
   };
 }];
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 /* Directives */
@@ -48548,7 +48564,7 @@ testDirectives
   .directive('backImg',  require('./back-img'))
   .directive('backGrad',  require('./back-grad'))
 
-},{"./back-grad":17,"./back-img":18}],17:[function(require,module,exports){
+},{"./back-grad":18,"./back-img":19}],18:[function(require,module,exports){
 exports = module.exports = [function(){
   return function(scope, element, attrs){
     var size = attrs.size;
@@ -48565,7 +48581,7 @@ exports = module.exports = [function(){
     });
   };
 }];
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 exports = module.exports = [function(){
   return function(scope, element, attrs){
     var size = attrs.size;
@@ -48579,7 +48595,7 @@ exports = module.exports = [function(){
     });
   };
 }];
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 /* Services */
@@ -48589,8 +48605,9 @@ var testServices = angular.module('testServices', []);
 testServices
   // .factory('Processes',       require('./processes'))
   // .factory('Team',            require('./team'))
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 module.exports={
+  "header_0":       "Main",
   "header_1":       "About Council",
   "header_2":       "Pressroom",
   "header_3":       "Competitions",
@@ -48640,6 +48657,7 @@ module.exports={
   "n_6_title":      "Attention entrepreneurs!",
   "n_6_date":       "December 2, 2016",
   "n_btn":          "All news",
+  "c_btn":          "Next",
   "c_1_title":      "Competitions",
   "c_1_text":       "Determines priorities of language policy of the Republic of Sakha (Yakutia) in the field of conservation, study, development and use of the state and official languages of the Republic of Sakha (Yakutia)",
   "c_2_title":      "Contest «Yakutia is calling you!»",
@@ -48653,10 +48671,14 @@ module.exports={
   "f_form_phone":   "Phone",
   "f_form_email":   "E-mail",
   "f_form_text":    "Message",
-  "f_form_btn":     "Send"
+  "f_form_btn":     "Send",
+  "f_form_date":    "Date & time",
+  "f_form_title":   "Title",
+  "f_form_content": "Content"
 }
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 module.exports={
+  "header_0":       "Главная",
   "header_1":       "О совете",
   "header_2":       "Пресс-центр",
   "header_3":       "Конкурсы",
@@ -48706,6 +48728,7 @@ module.exports={
   "n_6_title":      "Вниманию предпринимателей!",
   "n_6_date":       "02 декабря 2016",
   "n_btn":          "Все новости",
+  "c_btn":          "Далее",
   "c_1_title":      "Конкурсы",
   "c_1_text":       "Определяет приоритетные направления языковой политики Республики Саха (Якутия) в сфере сохранения, изучения, развития и использования государственных и официальных языков Республики Саха (Якутия)",
   "c_2_title":      "Конкурс «Якутия зовет!»",
@@ -48719,6 +48742,9 @@ module.exports={
   "f_form_phone":   "Телефон",
   "f_form_email":   "Эл. почта",
   "f_form_text":    "Сообщение",
-  "f_form_btn":     "Отправить"
+  "f_form_btn":     "Отправить",
+  "f_form_date":    "Дата и Время",
+  "f_form_title":   "Название",
+  "f_form_content": "Описание"
 }
 },{}]},{},[12]);
