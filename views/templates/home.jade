@@ -19,11 +19,19 @@ section#quote(back-grad="../images/cover/hero.jpg")
   .container
     .row
       .col-xs-12.col-lg-8.col-lg-offset-2
-        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}")
+        ks-swiper-container(
+          autoplay="5000"
+          initial-slide="0"
+          loop="true"
+          override-parameters="{'effect':'slide'}"
+          pagination-clickable="false"
+          show-nav-buttons="false"
+          slides-per-view="1"
+          space-between="30")
           ks-swiper-slide.swiper-slide
             blockquote
               .blockquote-img
-                .blockquote-img-container(style="background-image: url(../images/borisov.png)")
+                .blockquote-img-container(back-img="../images/borisov.png")
               .blockquote-text
                 p {{'q_text' | translate}}
                 footer {{'q_author' | translate}}
@@ -32,7 +40,7 @@ section#quote(back-grad="../images/cover/hero.jpg")
           ks-swiper-slide.swiper-slide
             blockquote
               .blockquote-img
-                .blockquote-img-container(style="background-image: url(../images/cover/hero.jpg)")
+                .blockquote-img-container(back-img="../images/cover/hero.jpg")
               .blockquote-text
                 p {{'p_text' | translate}}
                 footer {{'q_author' | translate}}
@@ -66,7 +74,15 @@ section#events(back-grad="../images/cover/hero.jpg")
           p {{'e_text' | translate}}
     .row
       .col-xs-12.col-lg-10.col-lg-offset-1
-        ks-swiper-container(initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}")
+        ks-swiper-container(autoplay="5000"
+                            initial-slide="0"
+                            loop="true"
+                            override-parameters="{'effect':'slide'}"
+                            pagination-clickable="false"
+                            pagination-is-active="true"
+                            show-nav-buttons="false"
+                            slides-per-view="1"
+                            space-between="30")
           ks-swiper-slide.swiper-slide
             fugure.card
               .card-bg(back-img="../images/competition.jpg")
@@ -83,7 +99,7 @@ section#events(back-grad="../images/cover/hero.jpg")
                 p {{'e_2_text' | translate}}
           ks-swiper-slide.swiper-slide
             .add-event
-              a.btn.btn-default(href="") {{'h_btn' | translate}}
+              a.btn.btn-default(ng-click="eventFormOpen()") {{'h_btn' | translate}}
               p {{'e_add_text' | translate}}
               a.btn.btn-default.btn-sm(href="") {{'e_btn' | translate}}
 section#news
@@ -178,12 +194,48 @@ section#feedback(back-grad="../images/cover/hero.jpg")
         article
           h3.title-center.white {{'f_title' | translate}}
           p {{'f_text' | translate}}
-        form
+          //- div(ng-controller="formFeedbackCtrl")
+          //-   form(name="userForm"  class="well form-search")
+          //-     input(type="text" ng-model="name" class="input-medium search-query" placeholder="Name" required)
+          //-     input(type="email" ng-model="email" class="input-medium search-query" placeholder="Email" required)
+          //-     input(type="text" ng-model="message" class="input-medium search-query" placeholder="Message" required)
+          //-     button(type="submit" class="btn" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid") Submit
+          //-     | {{userForm.$valid}}
+          //-   pre(ng-model="result") {{result}}
+        form#formfeedback
           .row
             .col-xs-12.col-sm-8.col-sm-offset-2
-              h4 {{'f_form' | translate}}
-              input(type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required")
-              input(type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required")
-              input(type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required")
-              textarea(rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required")
-              button.btn.btn-default.btn-sm(type="submit") {{'f_form_btn' | translate}}
+                h4 {{'f_form' | translate}}
+                input(type="text"  
+                      placeholder="{{'f_form_name' | translate}}"
+                      name="feedback_name"
+                      required="required")
+                input(type="tel"
+                      placeholder="{{'f_form_phone' | translate}}"
+                      name="feedback_phone"
+                      required="required")
+                input(type="email"
+                      placeholder="{{'f_form_email' | translate}}"
+                      name="feedback_mail"
+                      required="required")
+                textarea(rows="5"
+                         placeholder="{{'f_form_text' | translate}}"
+                         name="feedback_text"
+                         required="required")
+                button.btn.btn-default.btn-sm(type="submit") {{'f_form_btn' | translate}}
+script.
+  $("#formfeedback").submit(function() {
+    var data = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "feedback.php",
+      data: data,
+      success: function() {
+        alert('Ваше сообщение отправлено');
+      },
+      error: function() {
+        alert('Ваше сообщение не отправлено');
+      }
+    });
+    return false;
+  });

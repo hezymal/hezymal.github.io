@@ -249,9 +249,17 @@ section
       }
     }
   }
-  #projects .project article p
+  #projects
   {
-    display: none;
+    .project{
+      article{
+        margin: 0;
+        p
+        {
+          display: none;
+        }
+      }
+    }
   }
 }
 @media (max-width: 767px)

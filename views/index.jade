@@ -5,7 +5,7 @@ block content
   .wrapper.zero-hack(ui-view)
   include ./includes/footer.jade
   script(type="text/ng-template" id="menu")
-    .menu(ng-controller="menuCtrl")
+    .menu(ng-controller="translateCtrl")
       .container
         .row
           .col-xs-12
@@ -26,7 +26,7 @@ block content
             button.btn.btn-lang(ng-click="changeLanguage('en_US');closeThisDialog()") English
             button.btn.btn-lang(ng-click="changeLanguage('ru_RU');closeThisDialog()") Русский
   script(type="text/ng-template" id="event_form")
-    form
+    form#formaddevent
       .container
         .row
           .col-lg-10.col-lg-offset-1
@@ -35,12 +35,34 @@ block content
             fugure.card
               .card-bg(back-grad="../images/competition.jpg")
                 h4 {{'f_form' | translate}}
-                input(type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required")
-                input(type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required")
-                input(type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required")
-                textarea(rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required")
+                input(type="text"
+                      name="addevent_name"
+                      placeholder="{{'f_form_name' | translate}}"
+                      required="required")
+                input(type="tel"
+                      name="addevent_phone"
+                      placeholder="{{'f_form_phone' | translate}}"
+                      required="required")
+                input(type="email"
+                      name="addevent_email"
+                      placeholder="{{'f_form_email' | translate}}"
+                      required="required")
+                textarea(rows="5"
+                         name="addevent_message"
+                         placeholder="{{'f_form_text' | translate}}"
+                         required="required")
               figcaption.card-caption
-                input(type="text" name="date" placeholder="{{'f_form_date' | translate}}" ng-model="date" required="required")
-                input(type="tel" name="title" placeholder="{{'f_form_title' | translate}}" ng-model="title" required="required")
-                textarea(rows="8" name="content" placeholder="{{'f_form_content' | translate}}" required="required")
-                a.btn.btn-default(href="") {{'f_form_btn' | translate}}
+                input(type="text"
+                      name="addevent_date"
+                      placeholder="{{'f_form_date' | translate}}"
+                      required="required")
+                input(type="tel"
+                      name="addevent_title"
+                      placeholder="{{'f_form_title' | translate}}"
+                      required="required")
+                textarea(rows="8"
+                         name="addevent_content"
+                         placeholder="{{'f_form_content' | translate}}"
+                         required="required")
+                button.btn.btn-default(type="submit") {{'f_form_btn' | translate}}
+    script(type="text/javascript" src="addevent.js")

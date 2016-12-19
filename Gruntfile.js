@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           {
-            expand: true, cwd: 'public/', src: ['favicon.ico', 'favicon.png'], dest: 'public/build/'
+            expand: true, cwd: 'public/', src: ['favicon.ico', 'favicon.png', '*.php'], dest: 'public/build/'
           },
           {
             expand: true, cwd: 'public/images', src: ['*.svg'], dest: 'public/build/images'
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             expand: true, cwd: 'public/stylesheets', src: ['style.css'], dest: 'public/build/css'
           },
           {
-            expand: true, cwd: 'public/javascripts', src: ['script.js'], dest: 'public/build/js'
+            expand: true, cwd: 'public/javascripts', src: ['script.js', 'addevent.js'], dest: 'public/build/js'
           }
         ]
       }
@@ -77,6 +77,10 @@ module.exports = function(grunt) {
             {
               pattern: '<script type="text/javascript" src="app.js"></script>',
               replacement: '<script type="text/javascript" src="js/app.js"></script>'
+            },
+            {
+              pattern: '<script type="text/javascript" src="addevent.js"></script>',
+              replacement: '<script type="text/javascript" src="js/addevent.js"></script>'
             },
             {
               pattern: '<script type="text/javascript" src="script.js"></script>',

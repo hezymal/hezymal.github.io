@@ -26,11 +26,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-lg-8 col-lg-offset-2">
-        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}">
+        <ks-swiper-container autoplay="5000" initial-slide="0" loop="true" override-parameters="{'effect':'slide'}" pagination-clickable="false" show-nav-buttons="false" slides-per-view="1" space-between="30">
           <ks-swiper-slide class="swiper-slide">
             <blockquote>
               <div class="blockquote-img">
-                <div style="background-image: url(../images/borisov.png)" class="blockquote-img-container"></div>
+                <div back-img="../images/borisov.png" class="blockquote-img-container"></div>
               </div>
               <div class="blockquote-text">
                 <p>{{'q_text' | translate}}</p>
@@ -43,7 +43,7 @@
           <ks-swiper-slide class="swiper-slide">
             <blockquote>
               <div class="blockquote-img">
-                <div style="background-image: url(../images/cover/hero.jpg)" class="blockquote-img-container"></div>
+                <div back-img="../images/cover/hero.jpg" class="blockquote-img-container"></div>
               </div>
               <div class="blockquote-text">
                 <p>{{'p_text' | translate}}</p>
@@ -94,7 +94,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-        <ks-swiper-container initial-slide="0" loop="true" show-nav-buttons="false" slides-per-view="1" pagination-clickable="false" pagination-is-active="true" autoplay="5000" space-between="30" override-parameters="{'effect':'slide'}">
+        <ks-swiper-container autoplay="5000" initial-slide="0" loop="true" override-parameters="{'effect':'slide'}" pagination-clickable="false" pagination-is-active="true" show-nav-buttons="false" slides-per-view="1" space-between="30">
           <ks-swiper-slide class="swiper-slide">
             <fugure class="card">
               <div back-img="../images/competition.jpg" class="card-bg"></div>
@@ -116,7 +116,7 @@
             </fugure>
           </ks-swiper-slide>
           <ks-swiper-slide class="swiper-slide">
-            <div class="add-event"><a href="" class="btn btn-default">{{'h_btn' | translate}}</a>
+            <div class="add-event"><a ng-click="eventFormOpen()" class="btn btn-default">{{'h_btn' | translate}}</a>
               <p>{{'e_add_text' | translate}}</p><a href="" class="btn btn-default btn-sm">{{'e_btn' | translate}}</a>
             </div>
           </ks-swiper-slide>
@@ -227,14 +227,14 @@
           <h3 class="title-center white">{{'f_title' | translate}}</h3>
           <p>{{'f_text' | translate}}</p>
         </article>
-        <form>
+        <form id="formfeedback">
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
               <h4>{{'f_form' | translate}}</h4>
-              <input type="text" name="name" placeholder="{{'f_form_name' | translate}}" ng-model="name" required="required"/>
-              <input type="tel" name="phone" placeholder="{{'f_form_phone' | translate}}" ng-model="phone" required="required"/>
-              <input type="email" name="email" placeholder="{{'f_form_email' | translate}}" ng-model="email" required="required"/>
-              <textarea rows="5" name="message" placeholder="{{'f_form_text' | translate}}" required="required"></textarea>
+              <input type="text" placeholder="{{'f_form_name' | translate}}" name="feedback_name" required="required"/>
+              <input type="tel" placeholder="{{'f_form_phone' | translate}}" name="feedback_phone" required="required"/>
+              <input type="email" placeholder="{{'f_form_email' | translate}}" name="feedback_mail" required="required"/>
+              <textarea rows="5" placeholder="{{'f_form_text' | translate}}" name="feedback_text" required="required"></textarea>
               <button type="submit" class="btn btn-default btn-sm">{{'f_form_btn' | translate}}</button>
             </div>
           </div>
@@ -243,3 +243,35 @@
     </div>
   </div>
 </section>
+<script>
+  $("#formfeedback").submit(function() {
+    var data = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "feedback.php",
+      data: data,
+      success: function() {
+        alert('Ваше сообщение отправлено');
+      },
+      error: function() {
+        alert('Ваше сообщение не отправлено');
+      }
+    });
+    return false;
+  });
+  //- $("#formaddevent").submit(function() {
+  //-   var data = $(this).serialize();
+  //-   $.ajax({
+  //-     type: "POST",
+  //-     url: "addevent.php",
+  //-     data: data,
+  //-     success: function() {
+  //-       alert('Ваше сообщение отправлено');
+  //-     },
+  //-     error: function() {
+  //-       alert('Ваше сообщение не отправлено');
+  //-     }
+  //-   });
+  //-   return false;
+  //- }); 
+</script>

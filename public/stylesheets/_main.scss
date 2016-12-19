@@ -58,19 +58,15 @@ figure
 .header
 {
   position: absolute;
-  z-index: 10001;
-  top: 0;
+  top: 40px;
   left: 0;
 
   width: 100vw;
-  height: 135px;
   .navbar
   {
     display: table;
 
     width: 100%;
-    height: 62px;
-    margin: 40px 0 0;
     &-bento
     {
       float: right;
@@ -80,8 +76,11 @@ figure
 
       cursor: pointer;
       vertical-align: middle;
+      position: relative;
+      z-index: 10000;
       &.active
       {
+        z-index: 10001;
         span
         {
           &:after
@@ -143,10 +142,10 @@ figure
           height: 4px;
 
           content: '';
-          -webkit-transition: all 160ms ease-in-out;
-             -moz-transition: all 160ms ease-in-out;
-               -o-transition: all 160ms ease-in-out;
-                  transition: all 160ms ease-in-out;
+          -webkit-transition: transform 160ms ease-in-out, bottom 160ms ease-in-out;
+             -moz-transition: transform 160ms ease-in-out, bottom 160ms ease-in-out;
+               -o-transition: transform 160ms ease-in-out, bottom 160ms ease-in-out;
+                  transition: transform 160ms ease-in-out, bottom 160ms ease-in-out;
 
           background: #fff;
         }
@@ -209,7 +208,7 @@ figure
 
   display: inline-block;
 
-  padding: 12px 46px;
+  padding: 12px 30px;
 
   cursor: pointer;
   -webkit-user-select: none;
@@ -255,12 +254,14 @@ figure
 }
 .btn-close {
   cursor: pointer;
+  position: relative;
+  z-index: 10002;
+  left: 100%;
   span {
     position: relative;
 
     display: block;
     
-    margin-left: 100%;
     width: 32px;
     height: 32px;
     &:before,

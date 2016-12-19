@@ -48491,7 +48491,7 @@ angular
       .preferredLanguage('ru_RU')
       .useSanitizeValueStrategy('escapeParameters')
   }])
-},{"../json/locale/locale-en_US.json":21,"../json/locale/locale-ru_RU.json":22,"./controllers/_module":13,"./directives/_module":17,"./services/_module":20,"angular":9,"angular-resource":2,"angular-sanitize":4,"angular-swiper":5,"angular-translate":6,"angular-ui-router":7,"ng-dialog":10,"swiper":11}],13:[function(require,module,exports){
+},{"../json/locale/locale-en_US.json":23,"../json/locale/locale-ru_RU.json":24,"./controllers/_module":13,"./directives/_module":19,"./services/_module":22,"angular":9,"angular-resource":2,"angular-sanitize":4,"angular-swiper":5,"angular-translate":6,"angular-ui-router":7,"ng-dialog":10,"swiper":11}],13:[function(require,module,exports){
 'use strict';
 
 /* Controllers */
@@ -48499,14 +48499,77 @@ angular
 var testControllers = angular.module('testControllers', []);
 
 testControllers
-  .controller('headerCtrl',     require('./header'))
-  .controller('homeCtrl',       require('./home'))
-  .controller('menuCtrl',       require('./menu'))
+  .controller('menuCtrl',          require('./menu'))
+  .controller('translateCtrl',     require('./translate'))
+  .controller('formAddEventCtrl',  require('./form_add_event'))
+  .controller('formFeedbackCtrl',  require('./form_feedback'))
+
+  .controller('homeCtrl',  require('./home'))
   // .controller('carouselCtrl',   require('./carousel'))
   // .controller('processesCtrl',  require('./processes'))
   // .controller('peopleCtrl',     require('./people'))
 
-},{"./header":14,"./home":15,"./menu":16}],14:[function(require,module,exports){
+},{"./form_add_event":14,"./form_feedback":15,"./home":16,"./menu":17,"./translate":18}],14:[function(require,module,exports){
+exports = module.exports = ['$scope', '$translate', '$state', function ($scope, $translate, $state) {
+  // $scope.$state = $state;
+  // $scope.changeLanguage = function (key) {
+  //   $translate.use(key);
+  //   $state.reload();
+  // };
+}];
+},{}],15:[function(require,module,exports){
+exports = module.exports = ['$scope', '$http', function ($scope, $http) {
+    // $scope.url = 'feedback.php';
+
+    // $scope.formsubmit = function(isValid) {
+    //   if (isValid) {
+    //   $http.post($scope.url, {"name": $scope.name, "email": $scope.email, "message": $scope.message})
+    //     .success(function(data, status) {
+    //       console.log(data);
+    //       $scope.status = status;
+    //       $scope.data = data;
+    //       $scope.result = data;
+    //     })
+    //   }else{
+    //     alert('Form is not valid');
+    //   }
+    // }
+  // $scope.resultMessage;
+  // $scope.formData = {};
+  // $scope.processForm = function() {
+  //   console.log($httpParamSerializerJQLike($scope.formData));
+  //   console.log($scope.formData);
+  //   console.log($.param($scope.formData));
+  //   $http({
+  //     url     : '../feedback.php',
+  //     method  : 'POST',
+  //     data    : $.param($scope.formData),
+  //     headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+  //   }).success(function(data){
+  //     console.log(data);
+  //     if (data.success) {
+  //       $scope.resultMessage = data.message;
+  //     } else {
+  //       $scope.resultMessage = data.message;
+  //     }
+  //   });
+  // }
+}];
+},{}],16:[function(require,module,exports){
+exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
+  $scope.eventFormOpen = function () {
+    var dialog = ngDialog.open({
+      template: 'event_form'
+    });
+    dialog.closePromise.then(function (data) {
+      $scope.toggle = false;
+    });
+  };
+  $scope.closeDialog = function () {
+    ngDialog.close();
+  };
+}];
+},{}],17:[function(require,module,exports){
 exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
   $scope.clickToOpen = function () {
     var dialog = ngDialog.open({
@@ -48531,21 +48594,7 @@ exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
     }
   };
 }];
-},{}],15:[function(require,module,exports){
-exports = module.exports = ['$scope', 'ngDialog', function ($scope, ngDialog) {
-  $scope.eventFormOpen = function () {
-    var dialog = ngDialog.open({
-      template: 'event_form'
-    });
-    dialog.closePromise.then(function (data) {
-      $scope.toggle = false;
-    });
-  };
-  $scope.closeDialog = function () {
-    ngDialog.close();
-  };
-}];
-},{}],16:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 exports = module.exports = ['$scope', '$translate', '$state', function ($scope, $translate, $state) {
   $scope.$state = $state;
   $scope.changeLanguage = function (key) {
@@ -48553,7 +48602,7 @@ exports = module.exports = ['$scope', '$translate', '$state', function ($scope, 
     $state.reload();
   };
 }];
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 /* Directives */
@@ -48564,7 +48613,7 @@ testDirectives
   .directive('backImg',  require('./back-img'))
   .directive('backGrad',  require('./back-grad'))
 
-},{"./back-grad":18,"./back-img":19}],18:[function(require,module,exports){
+},{"./back-grad":20,"./back-img":21}],20:[function(require,module,exports){
 exports = module.exports = [function(){
   return function(scope, element, attrs){
     var size = attrs.size;
@@ -48581,7 +48630,7 @@ exports = module.exports = [function(){
     });
   };
 }];
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 exports = module.exports = [function(){
   return function(scope, element, attrs){
     var size = attrs.size;
@@ -48595,7 +48644,7 @@ exports = module.exports = [function(){
     });
   };
 }];
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 /* Services */
@@ -48605,7 +48654,7 @@ var testServices = angular.module('testServices', []);
 testServices
   // .factory('Processes',       require('./processes'))
   // .factory('Team',            require('./team'))
-},{}],21:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 module.exports={
   "header_0":       "Main",
   "header_1":       "About Council",
@@ -48676,7 +48725,7 @@ module.exports={
   "f_form_title":   "Title",
   "f_form_content": "Content"
 }
-},{}],22:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 module.exports={
   "header_0":       "Главная",
   "header_1":       "О совете",
