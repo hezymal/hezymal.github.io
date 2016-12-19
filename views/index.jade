@@ -26,7 +26,7 @@ block content
             button.btn.btn-lang(ng-click="changeLanguage('en_US');closeThisDialog()") English
             button.btn.btn-lang(ng-click="changeLanguage('ru_RU');closeThisDialog()") Русский
   script(type="text/ng-template" id="event_form")
-    form#formaddevent
+    form(ng-controller="formAddEventCtrl" ng-submit="addEventForm()")
       .container
         .row
           .col-lg-10.col-lg-offset-1
@@ -37,32 +37,38 @@ block content
                 h4 {{'f_form' | translate}}
                 input(type="text"
                       name="addevent_name"
+                      ng-model="formData2.addevent_name"
                       placeholder="{{'f_form_name' | translate}}"
                       required="required")
                 input(type="tel"
                       name="addevent_phone"
+                      ng-model="formData2.addevent_phone"
                       placeholder="{{'f_form_phone' | translate}}"
                       required="required")
                 input(type="email"
                       name="addevent_email"
+                      ng-model="formData2.addevent_email"
                       placeholder="{{'f_form_email' | translate}}"
                       required="required")
                 textarea(rows="5"
                          name="addevent_message"
+                         ng-model="formData2.addevent_message"
                          placeholder="{{'f_form_text' | translate}}"
                          required="required")
               figcaption.card-caption
                 input(type="text"
                       name="addevent_date"
+                      ng-model="formData2.addevent_date"
                       placeholder="{{'f_form_date' | translate}}"
                       required="required")
                 input(type="tel"
                       name="addevent_title"
+                      ng-model="formData2.addevent_title"
                       placeholder="{{'f_form_title' | translate}}"
                       required="required")
                 textarea(rows="8"
                          name="addevent_content"
+                         ng-model="formData2.addevent_content"
                          placeholder="{{'f_form_content' | translate}}"
                          required="required")
                 button.btn.btn-default(type="submit") {{'f_form_btn' | translate}}
-    script(type="text/javascript" src="addevent.js")

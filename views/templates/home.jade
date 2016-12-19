@@ -202,40 +202,44 @@ section#feedback(back-grad="../images/cover/hero.jpg")
           //-     button(type="submit" class="btn" ng-click="formsubmit(userForm.$valid)"  ng-disabled="userForm.$invalid") Submit
           //-     | {{userForm.$valid}}
           //-   pre(ng-model="result") {{result}}
-        form#formfeedback
+        form(ng-controller="formFeedbackCtrl" ng-submit="feedbackForm()")
           .row
             .col-xs-12.col-sm-8.col-sm-offset-2
                 h4 {{'f_form' | translate}}
                 input(type="text"  
                       placeholder="{{'f_form_name' | translate}}"
                       name="feedback_name"
+                      ng-model="formData.feedback_name"
                       required="required")
                 input(type="tel"
                       placeholder="{{'f_form_phone' | translate}}"
                       name="feedback_phone"
+                      ng-model="formData.feedback_phone"
                       required="required")
                 input(type="email"
                       placeholder="{{'f_form_email' | translate}}"
                       name="feedback_mail"
+                      ng-model="formData.feedback_mail"
                       required="required")
                 textarea(rows="5"
                          placeholder="{{'f_form_text' | translate}}"
                          name="feedback_text"
+                         ng-model="formData.feedback_text"
                          required="required")
                 button.btn.btn-default.btn-sm(type="submit") {{'f_form_btn' | translate}}
-script.
-  $("#formfeedback").submit(function() {
-    var data = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "feedback.php",
-      data: data,
-      success: function() {
-        alert('Ваше сообщение отправлено');
-      },
-      error: function() {
-        alert('Ваше сообщение не отправлено');
-      }
-    });
-    return false;
-  });
+//- script.
+//-   $("#formfeedback").submit(function() {
+//-     var data = $(this).serialize();
+//-     $.ajax({
+//-       type: "POST",
+//-       url: "feedback.php",
+//-       data: data,
+//-       success: function() {
+//-         alert('Ваше сообщение отправлено');
+//-       },
+//-       error: function() {
+//-         alert('Ваше сообщение не отправлено');
+//-       }
+//-     });
+//-     return false;
+//-   });

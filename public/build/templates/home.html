@@ -227,14 +227,14 @@
           <h3 class="title-center white">{{'f_title' | translate}}</h3>
           <p>{{'f_text' | translate}}</p>
         </article>
-        <form id="formfeedback">
+        <form ng-controller="formFeedbackCtrl" ng-submit="feedbackForm()">
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
               <h4>{{'f_form' | translate}}</h4>
-              <input type="text" placeholder="{{'f_form_name' | translate}}" name="feedback_name" required="required"/>
-              <input type="tel" placeholder="{{'f_form_phone' | translate}}" name="feedback_phone" required="required"/>
-              <input type="email" placeholder="{{'f_form_email' | translate}}" name="feedback_mail" required="required"/>
-              <textarea rows="5" placeholder="{{'f_form_text' | translate}}" name="feedback_text" required="required"></textarea>
+              <input type="text" placeholder="{{'f_form_name' | translate}}" name="feedback_name" ng-model="formData.feedback_name" required="required"/>
+              <input type="tel" placeholder="{{'f_form_phone' | translate}}" name="feedback_phone" ng-model="formData.feedback_phone" required="required"/>
+              <input type="email" placeholder="{{'f_form_email' | translate}}" name="feedback_mail" ng-model="formData.feedback_mail" required="required"/>
+              <textarea rows="5" placeholder="{{'f_form_text' | translate}}" name="feedback_text" ng-model="formData.feedback_text" required="required"></textarea>
               <button type="submit" class="btn btn-default btn-sm">{{'f_form_btn' | translate}}</button>
             </div>
           </div>
@@ -243,35 +243,3 @@
     </div>
   </div>
 </section>
-<script>
-  $("#formfeedback").submit(function() {
-    var data = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "feedback.php",
-      data: data,
-      success: function() {
-        alert('Ваше сообщение отправлено');
-      },
-      error: function() {
-        alert('Ваше сообщение не отправлено');
-      }
-    });
-    return false;
-  });
-  //- $("#formaddevent").submit(function() {
-  //-   var data = $(this).serialize();
-  //-   $.ajax({
-  //-     type: "POST",
-  //-     url: "addevent.php",
-  //-     data: data,
-  //-     success: function() {
-  //-       alert('Ваше сообщение отправлено');
-  //-     },
-  //-     error: function() {
-  //-       alert('Ваше сообщение не отправлено');
-  //-     }
-  //-   });
-  //-   return false;
-  //- }); 
-</script>
